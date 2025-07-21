@@ -1,4 +1,4 @@
-# SGKD Protocol & Cryptographic Benchmark Suite
+# SGKD Protocol & Cryptographic Benchmark
 
 ## Overview
 
@@ -9,7 +9,7 @@ This project contains implementations for cryptographic primitives and benchmark
   - `pairing-benchmark.cpp`: Benchmarks pairing-based cryptographic operations using Relic.
 - **SGKD-Protocol**
   - `ta.cpp`: Implements the Trusted Authority (TA) component of the SGKD protocol.
-  - `vehicles.cpp`: Implements the vehicle-side operations of the SGKD protocol.
+  - `vehicle.cpp`: Implements the vehicle-side operations of the SGKD protocol.
   - `utils.cpp`: Provides utility functions and shared code used by other SGKD protocol components.
 
 ## Project Structure
