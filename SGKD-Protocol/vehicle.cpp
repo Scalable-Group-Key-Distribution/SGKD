@@ -18,10 +18,37 @@ using namespace std;
 #define BUF_SIZE 4096
 
 //compile it using: g++ vehicle.cpp -o vehicle   -I/usr/local/relic/include   -L/usr/local/relic/lib -lrelic_s   -lssl -lcrypto   -std=c++17
-void derive_key(g1_t w1, g2_t w2) {
-    gt_t pairing_result;
+// void derive_key(g1_t w1, g2_t w2) {
+//     gt_t pairing_result;
+//     gt_null(pairing_result); gt_new(pairing_result);
+//     pc_map(pairing_result, w1, w2);
+
+//     uint8_t buffer[512];
+//     int len = gt_size_bin(pairing_result, 1);
+//     gt_write_bin(buffer, len, pairing_result, 1);
+
+//     uint8_t hash[SHA256_DIGEST_LENGTH];
+//     SHA256(buffer, len, hash);
+
+//     std::cout << "[*] Session Key: ";
+//     for (int i = 0; i < SHA256_DIGEST_LENGTH; i++)
+//         printf("%02x", hash[i]);
+//     std::cout << std::endl;
+// }
+void derive_key(const g1_t& w1, const g2_t& w2, const g1_t&  w3, const  g2_t& A) {
+    // compute e(w1,w2)/e(w3,A)
+     gt_t e_w1_w2, e_w3_A, pairing_result;
+    gt_null(e_w1_w2); gt_new(e_w1_w2);
+    gt_null(e_w3_A); gt_new(e_w3_A);
     gt_null(pairing_result); gt_new(pairing_result);
-    pc_map(pairing_result, w1, w2);
+    pc_map(e_w1_w2, w1, w2);
+    pc_map(e_w3_A, w3, A);
+    gt_inv(e_w3_A, e_w3_A);
+    gt_mul(pairing_result, e_w1_w2, e_w3_A);
+
+    // gt_t pairing_result;
+    // gt_null(pairing_result); gt_new(pairing_result);
+    // pc_map(pairing_result, w1, w2);
 
     uint8_t buffer[512];
     int len = gt_size_bin(pairing_result, 1);
@@ -35,7 +62,7 @@ void derive_key(g1_t w1, g2_t w2) {
         printf("%02x", hash[i]);
     std::cout << std::endl;
 }
-void UpdateMemberSecrets(const g1_t& w1, g2_t& w2, const bn_t& x_i, const g2_t& A_new, const bn_t& x_r) {
+void UpdateMemberSecrets(const g1_t& w1, g2_t& w2, const g1_t& w3, const bn_t& x_i, const g2_t& A_new, const bn_t& x_r) {
     bn_t ord, exp;
     bn_new(ord); bn_new(exp);
     ep_curve_get_ord(ord);
@@ -60,21 +87,59 @@ void UpdateMemberSecrets(const g1_t& w1, g2_t& w2, const bn_t& x_i, const g2_t& 
     g2_copy(w2, w2_new);
 
     // Derive new key
-    gt_t shared;
-    gt_new(shared);
-    pc_map(shared, w1, w2);
-    uint8_t hash[SHA256_DIGEST_LENGTH];
-    SHA256((uint8_t*)shared, sizeof(shared), hash);
+    // gt_t shared;
+    // gt_new(shared);
+    // pc_map(shared, w1, w2);
+    // uint8_t hash[SHA256_DIGEST_LENGTH];
+    // SHA256((uint8_t*)shared, sizeof(shared), hash);
 
-    std::cout << "[INFO] New session key derived (SHA256 hash of pairing result)" << std::endl;
-
+    // std::cout << "[INFO] New session key derived (SHA256 hash of pairing result)" << std::endl;
+    derive_key(w1,w2,w3,A_new);
     // Cleanup
     bn_free(ord); bn_free(exp);
     g2_free(w2_old_exp); g2_free(A_exp); g2_free(w2_new);
     gt_free(shared);
 }
+// void UpdateMemberSecrets(const g1_t& w1, g2_t& w2, const bn_t& x_i, const g2_t& A_new, const bn_t& x_r) {
+//     bn_t ord, exp;
+//     bn_new(ord); bn_new(exp);
+//     ep_curve_get_ord(ord);
 
-void listen_for_key_update(const g1_t& w1, g2_t& w2, const bn_t& x_i) {
+//     // e = 1 / (x_i - x_r)
+//     bn_sub(exp, x_i, x_r);
+//     bn_mod_inv(exp, exp, ord);
+
+//     g2_t w2_old_exp, A_exp, w2_new;
+//     g2_new(w2_old_exp); g2_new(A_exp); g2_new(w2_new);
+
+//     // w2_old_exp = w2^e
+//     g2_mul(w2_old_exp, w2, exp);
+//     // A_exp = A^e
+//     g2_mul(A_exp, A_new, exp);
+
+//     // w2_new = A^e / w2^e
+//     g2_neg(w2_old_exp, w2_old_exp);         // Point negation
+//     g2_add(w2_new, A_exp, w2_old_exp);      // Group addition (A_exp * w2_old_exp^{-1})
+
+//     // Update stored w2
+//     g2_copy(w2, w2_new);
+
+//     // Derive new key
+//     gt_t shared;
+//     gt_new(shared);
+//     pc_map(shared, w1, w2);
+//     uint8_t hash[SHA256_DIGEST_LENGTH];
+//     SHA256((uint8_t*)shared, sizeof(shared), hash);
+
+//     std::cout << "[INFO] New session key derived (SHA256 hash of pairing result)" << std::endl;
+
+//     // Cleanup
+//     bn_free(ord); bn_free(exp);
+//     g2_free(w2_old_exp); g2_free(A_exp); g2_free(w2_new);
+//     gt_free(shared);
+// }
+
+void listen_for_key_update(const g1_t& w1, g2_t& w2, const g1_t& w3, const bn_t& x_i) {
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockfd < 0) {
         perror("UDP socket creation failed");
@@ -115,7 +180,7 @@ void listen_for_key_update(const g1_t& w1, g2_t& w2, const bn_t& x_i) {
         bn_read_bin(x_r, buffer + offset, len_xr);
 
         std::cout << "[INFO] Key update received: updating member secrets..." << std::endl;
-        UpdateMemberSecrets(w1, w2, x_i, A_recv, x_r);
+        UpdateMemberSecrets(w1, w2, w3, x_i, A_recv, x_r);
 
         g2_free(A_recv); bn_free(x_r);
     }
@@ -123,7 +188,7 @@ void listen_for_key_update(const g1_t& w1, g2_t& w2, const bn_t& x_i) {
     close(sockfd);
 }
 //The listen_for_key_update_benchmark function used in measuring the end-to-end latency of vehicle revocation/key update process
-void listen_for_key_update_benchmark(const g1_t& w1, g2_t& w2, const bn_t& x_i, const std::string& vehicle_id) {
+void listen_for_key_update_benchmark(const g1_t& w1, g2_t& w2, const g1_t& w3, const bn_t& x_i, const std::string& vehicle_id) {
     int sockfd = socket(AF_INET, SOCK_DGRAM, 0);
     if (sockfd < 0) {
         perror("UDP socket creation failed");
@@ -164,7 +229,7 @@ void listen_for_key_update_benchmark(const g1_t& w1, g2_t& w2, const bn_t& x_i, 
         bn_read_bin(x_r, buffer + offset, len_xr);
 
         std::cout << "[INFO] Key update received: updating member secrets..." << std::endl;
-        UpdateMemberSecrets(w1, w2, x_i, A_recv, x_r);
+        UpdateMemberSecrets(w1, w2, w3, x_i, A_recv, x_r);
 
         // Send ACK back to TA
         // This is not part of the SGKP protocol. We add it here for the end-to-end latency measurment
@@ -187,6 +252,7 @@ void listen_for_key_update_benchmark(const g1_t& w1, g2_t& w2, const bn_t& x_i, 
 
         g2_free(A_recv); 
         bn_free(x_r);
+        g1_free(w3);
     }
 
     close(sockfd);
@@ -196,8 +262,10 @@ void registervehicle()
     bn_t x_i;
     g1_t w1;
     g2_t w2;
-    bn_null(x_i); g1_null(w1); g2_null(w2);
-    bn_new(x_i); g1_new(w1); g2_new(w2);
+    g1_t w3;
+    g2_t A;
+    bn_null(x_i); g1_null(w1); g2_null(w2); g1_null(w3); g2_null(A);
+    bn_new(x_i); g1_new(w1); g2_new(w2); g1_new(w3); g2_new(A);
     bn_t ord;
     bn_new(ord);
     ep_curve_get_ord(ord);
@@ -241,10 +309,15 @@ void registervehicle()
     recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
     recv(sock, buffer, len, MSG_WAITALL);        // Receive data
     g2_read_bin(w2, buffer, len);
-
-    derive_key(w1, w2);
+    recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
+    recv(sock, buffer, len, MSG_WAITALL);        // Receive data
+    g1_read_bin(w3, buffer, len);
+    recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
+    recv(sock, buffer, len, MSG_WAITALL);        // Receive data
+    g2_read_bin(A, buffer, len);
+    derive_key(w1, w2,w3,A);
     close(sock);
-    listen_for_key_update_benchmark(w1,w2,x_i,id);
+    listen_for_key_update_benchmark(w1,w2,w3,x_i,id);
 
 }
 //The registrvehicle_benchmark function is used for measuring the end-to-end latency of the vehicle registration process.
@@ -253,8 +326,10 @@ void registervehicle_benchmark()
     bn_t x_i;
     g1_t w1;
     g2_t w2;
-    bn_null(x_i); g1_null(w1); g2_null(w2);
-    bn_new(x_i); g1_new(w1); g2_new(w2);
+    g1_t w3;
+    g2_t A;
+    bn_null(x_i); g1_null(w1); g2_null(w2); g1_null(w3); g2_null(A);
+    bn_new(x_i); g1_new(w1); g2_new(w2); g1_new(w3); g2_new(A);
     bn_t ord;
     bn_new(ord);
     ep_curve_get_ord(ord);
@@ -298,8 +373,13 @@ void registervehicle_benchmark()
     recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
     recv(sock, buffer, len, MSG_WAITALL);        // Receive data
     g2_read_bin(w2, buffer, len);
-
-    derive_key(w1, w2);
+    recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
+    recv(sock, buffer, len, MSG_WAITALL);        // Receive data
+    g1_read_bin(w3, buffer, len);
+    recv(sock, &len, sizeof(len), MSG_WAITALL);  // Receive length
+    recv(sock, buffer, len, MSG_WAITALL);        // Receive data
+    g2_read_bin(A, buffer, len);
+    derive_key(w1, w2,w3,A);
     close(sock);
 
 }

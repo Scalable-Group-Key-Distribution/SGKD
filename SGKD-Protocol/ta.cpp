@@ -139,11 +139,11 @@ void AddMember(int sock) {
     std::cout<<"test1"<<std::endl;
 
     // 2. Generate member secret xi
-    bn_t xi, temp, inv;
+    bn_t xi,alphai, temp, inv;
     bn_t ord;
     bn_new(ord);
     ep_curve_get_ord(ord);
-    bn_new(xi); bn_new(temp); bn_new(inv);
+    bn_new(xi); bn_new(alphai); bn_new(temp); bn_new(inv);
     do{
     bn_rand_mod(xi, ord);
     }while (bn_is_zero(xi));
@@ -152,13 +152,18 @@ void AddMember(int sock) {
     std::cout<<"test2"<<std::endl;
     g1_t w1;
     g2_t w2;
-    g1_new(w1); g2_new(w2);
-    
+    g1_t w3;
+    g1_new(w1); g2_new(w2); g1_new(w3);
+    g1_rand(w3);
     // temp = xi + sk
     bn_add(temp, xi, sk);
     std::cout<<"test3"<<std::endl;
-    // w1 = h^{xi + sk}
+    // w1 = h^{xi + sk} g1^{alphai}
     g1_mul(w1, h, temp);
+    g1_t tempg1;
+    g1_new(tempg1);
+    g1_mul(tempg1, g1, alphai);
+    g1_add(w1, w1, tempg1);
     std::cout<<"test4"<<std::endl;
     // w2 = A^{1/(xi + sk)}
     // bn_gcd_ext(inv, NULL, NULL, temp, ord);
@@ -166,6 +171,12 @@ void AddMember(int sock) {
     std::cout<<"test5"<<std::endl;
     g2_mul(w2, A, inv);
     std::cout<<"test6"<<std::endl;
+    //w3=g1^{alphai/(xi + sk)}
+     bn_mul(temp, alphai, inv);
+     bn_mod(temp, temp, ord);
+     //compute w3=g1^{alphai/(xi + sk)}
+     g1_mul(w3, g1, temp);
+     g1_free(tempg1);
     // 3. Send xi, w1, w2 to the vehicle
     send_bn(sock, xi);
     std::cout<<"test7"<<std::endl;
@@ -173,9 +184,13 @@ void AddMember(int sock) {
     std::cout<<"test8"<<std::endl;
     send_element(sock, w2);
     std::cout<<"test9"<<std::endl;
+    send_element(sock, w3);
+    std::cout<<"test10"<<std::endl;
+    send_element(sock, A);
+    std::cout<<"test11"<<std::endl;
     bn_copy(xr,xi);
     bn_free(xi); bn_free(temp); bn_free(inv);
-    g1_free(w1); g1_free(w2);
+    g1_free(w1); g1_free(w2); g1_free(w3);
 }
 
 void RevokeMember(const bn_t& x_r) {

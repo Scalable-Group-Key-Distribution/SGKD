@@ -26,19 +26,19 @@ VEHICLES_SRC = SGKD-Protocol/vehicle.cpp
 # Targets
 # The 'all' target builds all executables
 # Each executable has its own target that compiles the corresponding source file
-all: $(PBENCH) $(PAIRBENCH) $(TA) $(VEHICLES)
+all: $(PBENCH) $(TA) $(VEHICLES)
 
 $(PBENCH): $(PBENCH_SRC)
 	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
 
-$(PAIRBENCH): $(PAIRBENCH_SRC)
-	$(CXX) $(CXXFLAGS) $^ -o $@ -lrelic -lgmp
+#$(PAIRBENCH): $(PAIRBENCH_SRC)
+#	$(CXX) $(CXXFLAGS) $^ -o $@ -lrelic -lgmp
 
 $(TA): $(TA_SRC)
-	$(CXX) $(CXXFLAGS) $^ -o $@ -I/usr/local/relic/include -L/usr/local/relic/lib -lrelic_s -lssl -lcrypto
+	$(CXX) $(CXXFLAGS) $^ -o $@ -I/usr/local/relic/include -L/usr/local/relic/lib -lrelic_s -lssl -lcrypto -lgmp
 
 $(VEHICLES): $(VEHICLES_SRC)
-	$(CXX) $(CXXFLAGS) $^ -o $@ -I/usr/local/relic/include -L/usr/local/relic/lib -lrelic_s -lssl -lcrypto
+	$(CXX) $(CXXFLAGS) $^ -o $@ -I/usr/local/relic/include -L/usr/local/relic/lib -lrelic_s -lssl -lcrypto -lgmp
 
 # The 'clean' target removes all executables
 clean:
