@@ -1,0 +1,440 @@
+version 2
+run General-6-20261011-17:06:27-2906
+attr configname General
+attr datetime 20261011-17:06:27
+attr experiment General
+attr inifile omnetpp.ini
+attr iterationvars ""
+attr iterationvarsf ""
+attr measurement ""
+attr network gkd_vanet.simulations.GroupKeyScenario
+attr processid 2906
+attr repetition 6
+attr replication #6
+attr resultdir results
+attr runnumber 6
+attr seedset 6
+param *.playgroundSizeX 5500m
+param *.playgroundSizeY 500m
+param *.playgroundSizeZ 50m
+param *.manager.updateInterval 0.1s
+param *.manager.host "\"localhost\""
+param *.manager.port 9999
+param *.manager.autoShutdown true
+param *.manager.moduleType "\"org.car2x.veins.nodes.Car\""
+param *.manager.moduleName "\"node\""
+param *.manager.launchConfig "xmldoc(\"groupkey.launchd.xml\")"
+param *.node[*].applType "\"gkd_vanet.modules.GroupKeyVehicleApp\""
+param *.node[*].appl.headerLength "88 bit"
+param *.node[*].appl.sendBeacons false
+param *.node[*].appl.dataOnSch false
+param *.node[*].veinsmobility.x 0
+param *.node[*].veinsmobility.y 0
+param *.node[*].veinsmobility.z 0
+param *.node[*].veinsmobility.setHostSpeed false
+param *.ta.keyUpdateInterval 3s
+param *.ta.wiredDatarate 100Mbps
+param *.ta.wiredDelay 1ms
+param *.numRsu 10
+param *.ta.numRsu 10
+param *.rsu[*].mobility.x "300+ (parentIndex() * 540)"
+param *.rsu[*].mobility.y 250
+param *.rsu[*].mobility.z 3
+param *.rsu[*].appl.headerLength "88 bit"
+param *.rsu[*].appl.sendBeacons false
+param *.rsu[*].appl.dataOnSch false
+param *.rsu[*].nic.phy80211p.antennaOffsetZ 3m
+param *.connectionManager.maxInterfDist 350m
+param *.connectionManager.sendDirect true
+param *.**.nic.mac1609_4.useServiceChannel false
+param *.**.nic.mac1609_4.txPower 20mW
+param *.**.nic.mac1609_4.bitrate 6Mbps
+param *.**.nic.phy80211p.usePropagationDelay true
+param *.**.nic.phy80211p.minPowerLevel -110dBm
+param *.**.nic.phy80211p.useNoiseFloor true
+param *.**.nic.phy80211p.noiseFloor -98dBm
+param *.**.nic.phy80211p.analogueModels "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.decider "xmldoc(\"config.xml\")"
+param *.**.nic.phy80211p.antenna "xmldoc(\"antenna.xml\", \"/root/Antenna[@id='monopole']\")"
+param *.manager.firstStepAt 0s
+
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001517536
+scalar GroupKeyScenario.node[2].appl responseProcessingLatency 0.010055274
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001282596
+scalar GroupKeyScenario.node[1].appl responseProcessingLatency 0.008428239
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001254652
+scalar GroupKeyScenario.node[0].appl responseProcessingLatency 0.008464797
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001215971
+scalar GroupKeyScenario.node[6].appl responseProcessingLatency 0.008261724
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001186085
+scalar GroupKeyScenario.node[7].appl responseProcessingLatency 0.008082375
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001188161
+scalar GroupKeyScenario.node[3].appl responseProcessingLatency 0.008093538
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00119954
+scalar GroupKeyScenario.node[9].appl responseProcessingLatency 0.008095653
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001396552
+scalar GroupKeyScenario.node[4].appl responseProcessingLatency 0.008236047
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001359764
+scalar GroupKeyScenario.node[5].appl responseProcessingLatency 0.008200023
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001200841
+scalar GroupKeyScenario.node[8].appl responseProcessingLatency 0.008099382
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001192269
+scalar GroupKeyScenario.node[10].appl responseProcessingLatency 0.008082831
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001168399
+scalar GroupKeyScenario.node[14].appl responseProcessingLatency 0.00785685
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001208725
+scalar GroupKeyScenario.node[11].appl responseProcessingLatency 0.009202449
+scalar GroupKeyScenario.ta updateGenerationLatency 0.000484122
+scalar GroupKeyScenario.node[0].appl updateProcessingLatency 0.009162756
+scalar GroupKeyScenario.node[0].appl updateLatency 0.010818903793
+scalar GroupKeyScenario.node[2].appl updateProcessingLatency 0.010945206
+scalar GroupKeyScenario.node[2].appl updateLatency 0.012601363065
+scalar GroupKeyScenario.node[1].appl updateProcessingLatency 0.011455458
+scalar GroupKeyScenario.node[1].appl updateLatency 0.01311164164
+scalar GroupKeyScenario.node[3].appl updateProcessingLatency 0.009397737
+scalar GroupKeyScenario.node[3].appl updateLatency 0.01105393313
+scalar GroupKeyScenario.node[4].appl updateProcessingLatency 0.011011953
+scalar GroupKeyScenario.node[4].appl updateLatency 0.012668152843
+scalar GroupKeyScenario.node[6].appl updateProcessingLatency 0.010087242
+scalar GroupKeyScenario.node[6].appl updateLatency 0.011743449839
+scalar GroupKeyScenario.node[5].appl updateProcessingLatency 0.009711594
+scalar GroupKeyScenario.node[5].appl updateLatency 0.011367827432
+scalar GroupKeyScenario.node[8].appl updateProcessingLatency 0.009982788
+scalar GroupKeyScenario.node[8].appl updateLatency 0.011639035391
+scalar GroupKeyScenario.node[10].appl updateProcessingLatency 0.009718884
+scalar GroupKeyScenario.node[10].appl updateLatency 0.011375137912
+scalar GroupKeyScenario.node[7].appl updateProcessingLatency 0.015745167
+scalar GroupKeyScenario.node[7].appl updateLatency 0.017401422622
+scalar GroupKeyScenario.node[9].appl updateProcessingLatency 0.010758846
+scalar GroupKeyScenario.node[9].appl updateLatency 0.012415124908
+scalar GroupKeyScenario.node[14].appl updateProcessingLatency 0.012828528
+scalar GroupKeyScenario.node[14].appl updateLatency 0.014484822381
+scalar GroupKeyScenario.node[11].appl updateProcessingLatency 0.011328063
+scalar GroupKeyScenario.node[11].appl updateLatency 0.012984360848
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001263735
+scalar GroupKeyScenario.node[12].appl responseProcessingLatency 0.009069432
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001301276
+scalar GroupKeyScenario.node[17].appl responseProcessingLatency 0.009143142
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001262966
+scalar GroupKeyScenario.node[16].appl responseProcessingLatency 0.009762831
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00140163
+scalar GroupKeyScenario.node[13].appl responseProcessingLatency 0.008757981
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001287735
+scalar GroupKeyScenario.node[15].appl responseProcessingLatency 0.009145407
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001279222
+scalar GroupKeyScenario.node[21].appl responseProcessingLatency 0.008957928
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001254767
+scalar GroupKeyScenario.node[18].appl responseProcessingLatency 0.010844724
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001461875
+scalar GroupKeyScenario.node[19].appl responseProcessingLatency 0.008466723
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001523727
+scalar GroupKeyScenario.node[20].appl responseProcessingLatency 0.009013821
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00125737
+scalar GroupKeyScenario.node[23].appl responseProcessingLatency 0.008349123
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001270635
+scalar GroupKeyScenario.node[22].appl responseProcessingLatency 0.008755371
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001453958
+scalar GroupKeyScenario.node[25].appl responseProcessingLatency 0.00957753
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001470339
+scalar GroupKeyScenario.node[26].appl responseProcessingLatency 0.008236749
+scalar GroupKeyScenario.ta updateGenerationLatency 0.000506823
+scalar GroupKeyScenario.node[0].appl updateProcessingLatency 0.009251484
+scalar GroupKeyScenario.node[0].appl updateLatency 0.010927535759
+scalar GroupKeyScenario.node[2].appl updateProcessingLatency 0.0092043
+scalar GroupKeyScenario.node[2].appl updateLatency 0.010880359354
+scalar GroupKeyScenario.node[1].appl updateProcessingLatency 0.010245264
+scalar GroupKeyScenario.node[1].appl updateLatency 0.011921364304
+scalar GroupKeyScenario.node[3].appl updateProcessingLatency 0.0101109
+scalar GroupKeyScenario.node[3].appl updateLatency 0.011787012117
+scalar GroupKeyScenario.node[4].appl updateProcessingLatency 0.009618858
+scalar GroupKeyScenario.node[4].appl updateLatency 0.011294984484
+scalar GroupKeyScenario.node[6].appl updateProcessingLatency 0.010072929
+scalar GroupKeyScenario.node[6].appl updateLatency 0.011749057311
+scalar GroupKeyScenario.node[5].appl updateProcessingLatency 0.009815028
+scalar GroupKeyScenario.node[5].appl updateLatency 0.011491192159
+scalar GroupKeyScenario.node[8].appl updateProcessingLatency 0.009811224
+scalar GroupKeyScenario.node[8].appl updateLatency 0.011487415082
+scalar GroupKeyScenario.node[10].appl updateProcessingLatency 0.00956664
+scalar GroupKeyScenario.node[10].appl updateLatency 0.011242833485
+scalar GroupKeyScenario.node[7].appl updateProcessingLatency 0.009894639
+scalar GroupKeyScenario.node[7].appl updateLatency 0.011570851815
+scalar GroupKeyScenario.node[9].appl updateProcessingLatency 0.009885519
+scalar GroupKeyScenario.node[9].appl updateLatency 0.011561745999
+scalar GroupKeyScenario.node[12].appl updateProcessingLatency 0.009703896
+scalar GroupKeyScenario.node[12].appl updateLatency 0.011380149497
+scalar GroupKeyScenario.node[14].appl updateProcessingLatency 0.010608888
+scalar GroupKeyScenario.node[14].appl updateLatency 0.012285142998
+scalar GroupKeyScenario.node[11].appl updateProcessingLatency 0.01055856
+scalar GroupKeyScenario.node[11].appl updateLatency 0.01223482987
+scalar GroupKeyScenario.node[13].appl updateProcessingLatency 0.009275712
+scalar GroupKeyScenario.node[13].appl updateLatency 0.010951997029
+scalar GroupKeyScenario.node[16].appl updateProcessingLatency 0.009885363
+scalar GroupKeyScenario.node[16].appl updateLatency 0.011561678545
+scalar GroupKeyScenario.node[18].appl updateProcessingLatency 0.009224619
+scalar GroupKeyScenario.node[18].appl updateLatency 0.010900939131
+scalar GroupKeyScenario.node[15].appl updateProcessingLatency 0.009564309
+scalar GroupKeyScenario.node[15].appl updateLatency 0.011240632724
+scalar GroupKeyScenario.node[17].appl updateProcessingLatency 0.013305534
+scalar GroupKeyScenario.node[17].appl updateLatency 0.01498188089
+scalar GroupKeyScenario.node[20].appl updateProcessingLatency 0.011222898
+scalar GroupKeyScenario.node[20].appl updateLatency 0.012899270287
+scalar GroupKeyScenario.node[22].appl updateProcessingLatency 0.00994479
+scalar GroupKeyScenario.node[22].appl updateLatency 0.011621163152
+scalar GroupKeyScenario.node[19].appl updateProcessingLatency 0.009997293
+scalar GroupKeyScenario.node[19].appl updateLatency 0.011673667514
+scalar GroupKeyScenario.node[21].appl updateProcessingLatency 0.009108795
+scalar GroupKeyScenario.node[21].appl updateLatency 0.010785197352
+scalar GroupKeyScenario.node[26].appl updateProcessingLatency 0.012075774
+scalar GroupKeyScenario.node[26].appl updateLatency 0.013752187547
+scalar GroupKeyScenario.node[23].appl updateProcessingLatency 0.011593602
+scalar GroupKeyScenario.node[23].appl updateLatency 0.013270022523
+scalar GroupKeyScenario.node[25].appl updateProcessingLatency 0.012719247
+scalar GroupKeyScenario.node[25].appl updateLatency 0.014395689461
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001243113
+scalar GroupKeyScenario.node[24].appl responseProcessingLatency 0.01010784
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00134447
+scalar GroupKeyScenario.node[27].appl responseProcessingLatency 0.008942349
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001407189
+scalar GroupKeyScenario.node[28].appl responseProcessingLatency 0.00880305
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001241421
+scalar GroupKeyScenario.node[29].appl responseProcessingLatency 0.008866749
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001295637
+scalar GroupKeyScenario.node[30].appl responseProcessingLatency 0.009441339
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001543004
+scalar GroupKeyScenario.node[34].appl responseProcessingLatency 0.009224415
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001379104
+scalar GroupKeyScenario.node[31].appl responseProcessingLatency 0.0097329
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001554987
+scalar GroupKeyScenario.node[32].appl responseProcessingLatency 0.010538604
+scalar GroupKeyScenario.ta updateGenerationLatency 0.000530096
+scalar GroupKeyScenario.node[0].appl updateProcessingLatency 0.010032075
+scalar GroupKeyScenario.node[0].appl updateLatency 0.01173232052
+scalar GroupKeyScenario.node[2].appl updateProcessingLatency 0.009910074
+scalar GroupKeyScenario.node[2].appl updateLatency 0.01161032363
+scalar GroupKeyScenario.node[1].appl updateProcessingLatency 0.009937605
+scalar GroupKeyScenario.node[1].appl updateLatency 0.011637923432
+scalar GroupKeyScenario.node[3].appl updateProcessingLatency 0.009946002
+scalar GroupKeyScenario.node[3].appl updateLatency 0.011646330608
+scalar GroupKeyScenario.node[6].appl updateProcessingLatency 0.011191851
+scalar GroupKeyScenario.node[6].appl updateLatency 0.012892180249
+scalar GroupKeyScenario.node[4].appl updateProcessingLatency 0.009476289
+scalar GroupKeyScenario.node[4].appl updateLatency 0.011176630172
+scalar GroupKeyScenario.node[5].appl updateProcessingLatency 0.009824871
+scalar GroupKeyScenario.node[5].appl updateLatency 0.011525254414
+scalar GroupKeyScenario.node[10].appl updateProcessingLatency 0.010053417
+scalar GroupKeyScenario.node[10].appl updateLatency 0.011753821509
+scalar GroupKeyScenario.node[8].appl updateProcessingLatency 0.009253176
+scalar GroupKeyScenario.node[8].appl updateLatency 0.010953589796
+scalar GroupKeyScenario.node[7].appl updateProcessingLatency 0.009972237
+scalar GroupKeyScenario.node[7].appl updateLatency 0.011672698316
+scalar GroupKeyScenario.node[9].appl updateProcessingLatency 0.010858203
+scalar GroupKeyScenario.node[9].appl updateLatency 0.012558666096
+scalar GroupKeyScenario.node[14].appl updateProcessingLatency 0.009626757
+scalar GroupKeyScenario.node[14].appl updateLatency 0.011327233909
+scalar GroupKeyScenario.node[12].appl updateProcessingLatency 0.009269991
+scalar GroupKeyScenario.node[12].appl updateLatency 0.01097047575
+scalar GroupKeyScenario.node[11].appl updateProcessingLatency 0.009982566
+scalar GroupKeyScenario.node[11].appl updateLatency 0.011683089395
+scalar GroupKeyScenario.node[13].appl updateProcessingLatency 0.014365149
+scalar GroupKeyScenario.node[13].appl updateLatency 0.016065676366
+scalar GroupKeyScenario.node[18].appl updateProcessingLatency 0.0100026
+scalar GroupKeyScenario.node[18].appl updateLatency 0.011703151671
+scalar GroupKeyScenario.node[16].appl updateProcessingLatency 0.009658221
+scalar GroupKeyScenario.node[16].appl updateLatency 0.011358775697
+scalar GroupKeyScenario.node[15].appl updateProcessingLatency 0.009823335
+scalar GroupKeyScenario.node[15].appl updateLatency 0.011523919082
+scalar GroupKeyScenario.node[17].appl updateProcessingLatency 0.009891195
+scalar GroupKeyScenario.node[17].appl updateLatency 0.011591793243
+scalar GroupKeyScenario.node[22].appl updateProcessingLatency 0.00923508
+scalar GroupKeyScenario.node[22].appl updateLatency 0.010935705595
+scalar GroupKeyScenario.node[20].appl updateProcessingLatency 0.009278085
+scalar GroupKeyScenario.node[20].appl updateLatency 0.010978713404
+scalar GroupKeyScenario.node[19].appl updateProcessingLatency 0.015993966
+scalar GroupKeyScenario.node[19].appl updateLatency 0.017694609011
+scalar GroupKeyScenario.node[21].appl updateProcessingLatency 0.009284058
+scalar GroupKeyScenario.node[21].appl updateLatency 0.010984723954
+scalar GroupKeyScenario.node[23].appl updateProcessingLatency 0.010298412
+scalar GroupKeyScenario.node[23].appl updateLatency 0.011999112202
+scalar GroupKeyScenario.node[26].appl updateProcessingLatency 0.009788004
+scalar GroupKeyScenario.node[26].appl updateLatency 0.011488704651
+scalar GroupKeyScenario.node[24].appl updateProcessingLatency 0.009856137
+scalar GroupKeyScenario.node[24].appl updateLatency 0.011556844193
+scalar GroupKeyScenario.node[25].appl updateProcessingLatency 0.009757776
+scalar GroupKeyScenario.node[25].appl updateLatency 0.011458508333
+scalar GroupKeyScenario.node[27].appl updateProcessingLatency 0.016466175
+scalar GroupKeyScenario.node[27].appl updateLatency 0.018166932165
+scalar GroupKeyScenario.node[30].appl updateProcessingLatency 0.013182699
+scalar GroupKeyScenario.node[30].appl updateLatency 0.014883458293
+scalar GroupKeyScenario.node[28].appl updateProcessingLatency 0.009531348
+scalar GroupKeyScenario.node[28].appl updateLatency 0.011232111844
+scalar GroupKeyScenario.node[29].appl updateProcessingLatency 0.009503847
+scalar GroupKeyScenario.node[29].appl updateLatency 0.011204633948
+scalar GroupKeyScenario.node[34].appl updateProcessingLatency 0.013968567
+scalar GroupKeyScenario.node[34].appl updateLatency 0.015669367116
+scalar GroupKeyScenario.node[31].appl updateProcessingLatency 0.010858488
+scalar GroupKeyScenario.node[31].appl updateLatency 0.012559294305
+scalar GroupKeyScenario.node[32].appl updateProcessingLatency 0.010380678
+scalar GroupKeyScenario.node[32].appl updateLatency 0.012081506407
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001454024
+scalar GroupKeyScenario.node[33].appl responseProcessingLatency 0.008893215
+scalar GroupKeyScenario.ta requestProcessingLatency 0.002234467
+scalar GroupKeyScenario.node[35].appl responseProcessingLatency 0.014507811
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001287539
+scalar GroupKeyScenario.node[36].appl responseProcessingLatency 0.008810349
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001295473
+scalar GroupKeyScenario.node[37].appl responseProcessingLatency 0.009736065
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001283062
+scalar GroupKeyScenario.node[38].appl responseProcessingLatency 0.008821236
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00127963
+scalar GroupKeyScenario.node[39].appl responseProcessingLatency 0.009851916
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001291361
+scalar GroupKeyScenario.node[40].appl responseProcessingLatency 0.008909577
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001688024
+scalar GroupKeyScenario.node[43].appl responseProcessingLatency 0.015404442
+scalar GroupKeyScenario.ta updateGenerationLatency 0.000525746
+scalar GroupKeyScenario.node[2].appl updateProcessingLatency 0.010922427
+scalar GroupKeyScenario.node[2].appl updateLatency 0.012621078093
+scalar GroupKeyScenario.node[0].appl updateProcessingLatency 0.010284438
+scalar GroupKeyScenario.node[0].appl updateLatency 0.011983097781
+scalar GroupKeyScenario.node[6].appl updateProcessingLatency 0.010581816
+scalar GroupKeyScenario.node[6].appl updateLatency 0.012280551897
+scalar GroupKeyScenario.node[4].appl updateProcessingLatency 0.010448205
+scalar GroupKeyScenario.node[4].appl updateLatency 0.012146969036
+scalar GroupKeyScenario.node[1].appl updateProcessingLatency 0.010698933
+scalar GroupKeyScenario.node[1].appl updateLatency 0.012397717494
+scalar GroupKeyScenario.node[3].appl updateProcessingLatency 0.011550249
+scalar GroupKeyScenario.node[3].appl updateLatency 0.013249038963
+scalar GroupKeyScenario.node[10].appl updateProcessingLatency 0.012973428
+scalar GroupKeyScenario.node[10].appl updateLatency 0.014672242916
+scalar GroupKeyScenario.node[5].appl updateProcessingLatency 0.013070856
+scalar GroupKeyScenario.node[5].appl updateLatency 0.014769684447
+scalar GroupKeyScenario.node[8].appl updateProcessingLatency 0.011032119
+scalar GroupKeyScenario.node[8].appl updateLatency 0.01273095732
+scalar GroupKeyScenario.node[14].appl updateProcessingLatency 0.010663383
+scalar GroupKeyScenario.node[14].appl updateLatency 0.012362275863
+scalar GroupKeyScenario.node[9].appl updateProcessingLatency 0.011674608
+scalar GroupKeyScenario.node[9].appl updateLatency 0.0133735074
+scalar GroupKeyScenario.node[12].appl updateProcessingLatency 0.010747233
+scalar GroupKeyScenario.node[12].appl updateLatency 0.012446145769
+scalar GroupKeyScenario.node[7].appl updateProcessingLatency 0.009955299
+scalar GroupKeyScenario.node[7].appl updateLatency 0.01165422169
+scalar GroupKeyScenario.node[18].appl updateProcessingLatency 0.011591646
+scalar GroupKeyScenario.node[18].appl updateLatency 0.013290617626
+scalar GroupKeyScenario.node[13].appl updateProcessingLatency 0.014729634
+scalar GroupKeyScenario.node[13].appl updateLatency 0.016428607189
+scalar GroupKeyScenario.node[11].appl updateProcessingLatency 0.010381251
+scalar GroupKeyScenario.node[11].appl updateLatency 0.012080233717
+scalar GroupKeyScenario.node[16].appl updateProcessingLatency 0.010673223
+scalar GroupKeyScenario.node[16].appl updateLatency 0.012372209819
+scalar GroupKeyScenario.node[15].appl updateProcessingLatency 0.009973362
+scalar GroupKeyScenario.node[15].appl updateLatency 0.011672406177
+scalar GroupKeyScenario.node[22].appl updateProcessingLatency 0.011118546
+scalar GroupKeyScenario.node[22].appl updateLatency 0.012817595703
+scalar GroupKeyScenario.node[17].appl updateProcessingLatency 0.01053942
+scalar GroupKeyScenario.node[17].appl updateLatency 0.012238477082
+scalar GroupKeyScenario.node[20].appl updateProcessingLatency 0.010440033
+scalar GroupKeyScenario.node[20].appl updateLatency 0.012139095601
+scalar GroupKeyScenario.node[19].appl updateProcessingLatency 0.010719408
+scalar GroupKeyScenario.node[19].appl updateLatency 0.012418513898
+scalar GroupKeyScenario.node[21].appl updateProcessingLatency 0.010751526
+scalar GroupKeyScenario.node[21].appl updateLatency 0.01245064894
+scalar GroupKeyScenario.node[26].appl updateProcessingLatency 0.013388244
+scalar GroupKeyScenario.node[26].appl updateLatency 0.015087376896
+scalar GroupKeyScenario.node[24].appl updateProcessingLatency 0.011953116
+scalar GroupKeyScenario.node[24].appl updateLatency 0.013652263385
+scalar GroupKeyScenario.node[23].appl updateProcessingLatency 0.010241982
+scalar GroupKeyScenario.node[23].appl updateLatency 0.011941149262
+scalar GroupKeyScenario.node[25].appl updateProcessingLatency 0.010224855
+scalar GroupKeyScenario.node[25].appl updateLatency 0.01192404475
+scalar GroupKeyScenario.node[30].appl updateProcessingLatency 0.011392371
+scalar GroupKeyScenario.node[30].appl updateLatency 0.013091595252
+scalar GroupKeyScenario.node[27].appl updateProcessingLatency 0.013956531
+scalar GroupKeyScenario.node[27].appl updateLatency 0.015655759332
+scalar GroupKeyScenario.node[28].appl updateProcessingLatency 0.010235763
+scalar GroupKeyScenario.node[28].appl updateLatency 0.011934994707
+scalar GroupKeyScenario.node[29].appl updateProcessingLatency 0.011038134
+scalar GroupKeyScenario.node[29].appl updateLatency 0.01273739116
+scalar GroupKeyScenario.node[31].appl updateProcessingLatency 0.015630351
+scalar GroupKeyScenario.node[31].appl updateLatency 0.017329640128
+scalar GroupKeyScenario.node[34].appl updateProcessingLatency 0.019426815
+scalar GroupKeyScenario.node[34].appl updateLatency 0.021126108824
+scalar GroupKeyScenario.node[33].appl updateProcessingLatency 0.01258707
+scalar GroupKeyScenario.node[33].appl updateLatency 0.014286377483
+scalar GroupKeyScenario.node[32].appl updateProcessingLatency 0.010486833
+scalar GroupKeyScenario.node[32].appl updateLatency 0.012186158746
+scalar GroupKeyScenario.node[35].appl updateProcessingLatency 0.010431189
+scalar GroupKeyScenario.node[35].appl updateLatency 0.012130537829
+scalar GroupKeyScenario.node[38].appl updateProcessingLatency 0.012681858
+scalar GroupKeyScenario.node[38].appl updateLatency 0.014381210328
+scalar GroupKeyScenario.node[37].appl updateProcessingLatency 0.010185618
+scalar GroupKeyScenario.node[37].appl updateLatency 0.011884984047
+scalar GroupKeyScenario.node[36].appl updateProcessingLatency 0.010562481
+scalar GroupKeyScenario.node[36].appl updateLatency 0.012261863472
+scalar GroupKeyScenario.node[39].appl updateProcessingLatency 0.011801787
+scalar GroupKeyScenario.node[39].appl updateLatency 0.013501188151
+scalar GroupKeyScenario.node[40].appl updateProcessingLatency 0.010270014
+scalar GroupKeyScenario.node[40].appl updateLatency 0.011969436275
+scalar GroupKeyScenario.node[43].appl updateProcessingLatency 0.010268604
+scalar GroupKeyScenario.node[43].appl updateLatency 0.011968038799
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001298247
+scalar GroupKeyScenario.node[42].appl responseProcessingLatency 0.009276513
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001605302
+scalar GroupKeyScenario.node[41].appl responseProcessingLatency 0.011200143
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001316227
+scalar GroupKeyScenario.node[45].appl responseProcessingLatency 0.009926892
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001323361
+scalar GroupKeyScenario.node[44].appl responseProcessingLatency 0.0098694
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00134259
+scalar GroupKeyScenario.node[47].appl responseProcessingLatency 0.00897561
+scalar GroupKeyScenario.ta requestProcessingLatency 0.001411542
+scalar GroupKeyScenario.node[48].appl responseProcessingLatency 0.008490984
+scalar GroupKeyScenario.ta requestProcessingLatency 0.00124675
+scalar GroupKeyScenario.node[46].appl responseProcessingLatency 0.008454639
+scalar GroupKeyScenario.ta updateGenerationLatency 0.000539915
+scalar GroupKeyScenario.node[6].appl updateProcessingLatency 0.010619106
+scalar GroupKeyScenario.node[6].appl updateLatency 0.012324827619
+scalar GroupKeyScenario.node[2].appl updateProcessingLatency 0.009993687
+scalar GroupKeyScenario.node[2].appl updateLatency 0.011699438891
+scalar GroupKeyScenario.node[4].appl updateProcessingLatency 0.009712785
+scalar GroupKeyScenario.node[4].appl updateLatency 0.011418549182
+scalar GroupKeyScenario.node[10].appl updateProcessingLatency 0.013775274
+scalar GroupKeyScenario.node[10].appl updateLatency 0.015481052804
+scalar GroupKeyScenario.node[0].appl updateProcessingLatency 0.010159599
+scalar GroupKeyScenario.node[0].appl updateLatency 0.011865383442
+scalar GroupKeyScenario.node[8].appl updateProcessingLatency 0.009930204
+scalar GroupKeyScenario.node[8].appl updateLatency 0.011636023521
+scalar GroupKeyScenario.node[14].appl updateProcessingLatency 0.010058262
+scalar GroupKeyScenario.node[14].appl updateLatency 0.011764116468
+scalar GroupKeyScenario.node[12].appl updateProcessingLatency 0.01754121
+scalar GroupKeyScenario.node[12].appl updateLatency 0.019247099275
+scalar GroupKeyScenario.node[5].appl updateProcessingLatency 0.010112829
+scalar GroupKeyScenario.node[5].appl updateLatency 0.011818728429
+scalar GroupKeyScenario.node[3].appl updateProcessingLatency 0.009600738
+scalar GroupKeyScenario.node[3].appl updateLatency 0.011306649097
+scalar GroupKeyScenario.node[1].appl updateProcessingLatency 0.01144344
+scalar GroupKeyScenario.node[1].appl updateLatency 0.01314935526
+scalar GroupKeyScenario.node[9].appl updateProcessingLatency 0.012611181
+scalar GroupKeyScenario.node[9].appl updateLatency 0.014317098571
+scalar GroupKeyScenario.node[18].appl updateProcessingLatency 0.010055703
+scalar GroupKeyScenario.node[18].appl updateLatency 0.011761637163
+scalar GroupKeyScenario.node[7].appl updateProcessingLatency 0.01031358
+scalar GroupKeyScenario.node[7].appl updateLatency 0.012019534024
+scalar GroupKeyScenario.node[16].appl updateProcessingLatency 0.009993789
+scalar GroupKeyScenario.node[16].appl updateLatency 0.011699752086
+scalar GroupKeyScenario.node[13].appl updateProcessingLatency 0.011039502
+scalar GroupKeyScenario.node[13].appl updateLatency 0.01274548592
+scalar GroupKeyScenario.node[11].appl updateProcessingLatency 0.00968574
+scalar GroupKeyScenario.node[11].appl updateLatency 0.011391742183
+scalar GroupKeyScenario.node[22].appl updateProcessingLatency 0.009610785
+scalar GroupKeyScenario.node[22].appl updateLatency 0.011316799448
+scalar GroupKeyScenario.node[20].appl updateProcessingLatency 0.011888919
+scalar GroupKeyScenario.node[20].appl updateLatency 0.013594958222
+scalar GroupKeyScenario.node[15].appl updateProcessingLatency 0.010016064
+scalar GroupKeyScenario.node[15].appl updateLatency 0.011722121382
+scalar GroupKeyScenario.node[17].appl updateProcessingLatency 0.011688147
+scalar GroupKeyScenario.node[17].appl updateLatency 0.013394218675
+scalar GroupKeyScenario.node[26].appl updateProcessingLatency 0.010364409
+scalar GroupKeyScenario.node[26].appl updateLatency 0.012070506572
+scalar GroupKeyScenario.node[19].appl updateProcessingLatency 0.010289346
+scalar GroupKeyScenario.node[19].appl updateLatency 0.011995462527
+scalar GroupKeyScenario.node[24].appl update

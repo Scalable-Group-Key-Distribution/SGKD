@@ -1,0 +1,1 @@
+LIBS += -Wl,--whole-archive -lrelic_s -Wl,--no-whole-archive -lgmp

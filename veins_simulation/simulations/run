@@ -1,0 +1,4 @@
+#!/bin/sh
+cd `dirname $0`
+../src/gkd_vanet -n .:../src $*
+# for shared lib, use: opp_run -l ../src/gkd_vanet -n .:../src $*

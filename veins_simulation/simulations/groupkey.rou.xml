@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/routes_file.xsd">
+
+    <vType id="car"
+           accel="2.6"
+           decel="4.5"
+           sigma="0.5"
+           length="5"
+           minGap="2.5"
+           maxSpeed="20"
+           guiShape="passenger"/>
+
+    <route id="r0" edges="west"/>
+	<route id="r1" edges="east"/>
+	
+    <flow id="main"
+          type="car"
+          route="r0"
+          begin="0"
+          number="1500"
+          departLane="best"
+          departSpeed="max"/>
+     <flow id="main2"
+          type="car"
+          route="r1"
+          begin="0"
+          number="1500"
+          departLane="best"
+          departSpeed="max"/>
+
+</routes>

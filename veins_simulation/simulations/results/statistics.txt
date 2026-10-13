@@ -1,0 +1,257 @@
+=======================================================================
+100Cars
+=========================================================================
+=== registrationLatency ===
+Count:                  1998
+Sum:                    28025.516500 ms
+Average:                14.026785 ms
+Minimum:                11.400900 ms
+Maximum:                43.930300 ms
+Sample std deviation:   3.098957 ms
+Standard error:         0.069329 ms
+95% confidence interval: [13.890899, 14.162671] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  6298
+Sum:                    80411.361600 ms
+Average:                12.767761 ms
+Minimum:                10.436400 ms
+Maximum:                53.787200 ms
+Sample std deviation:   2.729496 ms
+Standard error:         0.034394 ms
+95% confidence interval: [12.700349, 12.835173] ms
+
+=== updateProcessingLatency ===
+Count:                  6298
+Sum:                    69042.054440 ms
+Average:                10.962536 ms
+Minimum:                8.792280 ms
+Maximum:                52.120100 ms
+Sample std deviation:   2.708246 ms
+Standard error:         0.034126 ms
+95% confidence interval: [10.895649, 11.029424] ms
+
+
+===================================================================================
+500Cars
+===================================================================================
+=== registrationLatency ===
+Count:                  9979
+Sum:                    136437.146400 ms
+Average:                13.672427 ms
+Minimum:                11.381500 ms
+Maximum:                57.159000 ms
+Sample std deviation:   2.567956 ms
+Standard error:         0.025707 ms
+95% confidence interval: [13.622042, 13.722812] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  32471
+Sum:                    399185.845100 ms
+Average:                12.293611 ms
+Minimum:                10.418000 ms
+Maximum:                56.970900 ms
+Sample std deviation:   1.722959 ms
+Standard error:         0.009562 ms
+95% confidence interval: [12.274870, 12.312352] ms
+
+=== updateProcessingLatency ===
+Count:                  32471
+Sum:                    342786.880640 ms
+Average:                10.556708 ms
+Minimum:                8.780240 ms
+Maximum:                55.313400 ms
+Sample std deviation:   1.710563 ms
+Standard error:         0.009493 ms
+95% confidence interval: [10.538103, 10.575314] ms
+
+
+=====================================================================
+1000Cars
+=====================================================================
+=== registrationLatency ===
+Count:                  7151
+Sum:                    97296.470100 ms
+Average:                13.605995 ms
+Minimum:                11.380800 ms
+Maximum:                59.552000 ms
+Sample std deviation:   2.604763 ms
+Standard error:         0.030802 ms
+95% confidence interval: [13.545622, 13.666368] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  268498
+Sum:                    3414180.024900 ms
+Average:                12.715849 ms
+Minimum:                10.377300 ms
+Maximum:                191.292000 ms
+Sample std deviation:   2.613587 ms
+Standard error:         0.005044 ms
+95% confidence interval: [12.705963, 12.725735] ms
+
+=== updateProcessingLatency ===
+Count:                  268498
+Sum:                    2941655.511060 ms
+Average:                10.955968 ms
+Minimum:                8.723320 ms
+Maximum:                189.625000 ms
+Sample std deviation:   2.589250 ms
+Standard error:         0.004997 ms
+95% confidence interval: [10.946174, 10.965762] ms
+
+
+
+================================================================================
+2000Cars
+================================================================================
+=== registrationLatency ===
+Count:                  7055
+Sum:                    94731.144700 ms
+Average:                13.427519 ms
+Minimum:                11.388000 ms
+Maximum:                59.881400 ms
+Sample std deviation:   2.191758 ms
+Standard error:         0.026094 ms
+95% confidence interval: [13.376374, 13.478663] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  268634
+Sum:                    3328158.777200 ms
+Average:                12.389194 ms
+Minimum:                10.403600 ms
+Maximum:                130.105000 ms
+Sample std deviation:   1.994045 ms
+Standard error:         0.003847 ms
+95% confidence interval: [12.381653, 12.396735] ms
+
+=== updateProcessingLatency ===
+Count:                  268634
+Sum:                    2859266.054260 ms
+Average:                10.643724 ms
+Minimum:                8.757200 ms
+Maximum:                128.283000 ms
+Sample std deviation:   1.982055 ms
+Standard error:         0.003824 ms
+95% confidence interval: [10.636228, 10.651219] ms
+
+======================================================================================
+Statistics for 3000Cars
+=== registrationLatency ===
+Count:                  6256
+Sum:                    82445.626700 ms
+Average:                13.178649 ms
+Minimum:                11.402700 ms
+Maximum:                47.928000 ms
+Sample std deviation:   1.848657 ms
+Standard error:         0.023373 ms
+95% confidence interval: [13.132838, 13.224459] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  254106
+Sum:                    3096733.398300 ms
+Average:                12.186778 ms
+Minimum:                10.398400 ms
+Maximum:                404.739000 ms
+Sample std deviation:   1.885868 ms
+Standard error:         0.003741 ms
+95% confidence interval: [12.179445, 12.194111] ms
+
+=== updateProcessingLatency ===
+Count:                  254107
+Sum:                    2646896.379270 ms
+Average:                10.416464 ms
+Minimum:                8.760010 ms
+Maximum:                403.074000 ms
+Sample std deviation:   1.801949 ms
+Standard error:         0.003575 ms
+95% confidence interval: [10.409458, 10.423470] ms
+
+==================================================================================================
+4000Cars
+====================================================================================
+tatistics.sh 
+=== registrationLatency ===
+Count:                  5573
+Sum:                    73531.326200 ms
+Average:                13.194209 ms
+Minimum:                11.384900 ms
+Maximum:                46.219500 ms
+Sample std deviation:   1.810262 ms
+Standard error:         0.024249 ms
+95% confidence interval: [13.146681, 13.241737] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  233696
+Sum:                    2848212.765700 ms
+Average:                12.187683 ms
+Minimum:                10.391300 ms
+Maximum:                89.306500 ms
+Sample std deviation:   1.819274 ms
+Standard error:         0.003763 ms
+95% confidence interval: [12.180307, 12.195059] ms
+
+=== updateProcessingLatency ===
+Count:                  233696
+Sum:                    2438319.347960 ms
+Average:                10.433723 ms
+Minimum:                8.750660 ms
+Maximum:                87.604000 ms
+Sample std deviation:   1.793568 ms
+Standard error:         0.003710 ms
+95% confidence interval: [10.426451, 10.440995] ms
+
+
+=========================================================================================
+5000Cars
+=========================================================================================
+=== registrationLatency ===
+Count:                  6254
+Sum:                    81504.863700 ms
+Average:                13.032437 ms
+Minimum:                11.369800 ms
+Maximum:                72.526500 ms
+Sample std deviation:   2.069944 ms
+Standard error:         0.026175 ms
+95% confidence interval: [12.981135, 13.083740] ms
+
+=== registrationProcessingLatency ===
+No values found
+
+=== updateLatency ===
+Count:                  241880
+Sum:                    2899179.876900 ms
+Average:                11.986026 ms
+Minimum:                10.325200 ms
+Maximum:                88.327100 ms
+Sample std deviation:   1.857462 ms
+Standard error:         0.003777 ms
+95% confidence interval: [11.978623, 11.993428] ms
+
+=== updateProcessingLatency ===
+Count:                  241880
+Sum:                    2478619.781300 ms
+Average:                10.247312 ms
+Minimum:                8.672980 ms
+Maximum:                86.635000 ms
+Sample std deviation:   1.816618 ms
+Standard error:         0.003694 ms
+95% confidence interval: [10.240072, 10.254551] ms
+

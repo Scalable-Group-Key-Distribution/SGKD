@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<net version="1.9" junctionCornerDetail="5" limitTurnSpeed="5.50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/net_file.xsd">
+    <location netOffset="0.00,0.00" convBoundary="0.00,0.00,5000.00,500.00" origBoundary="0.00,0.00,5000.00,500.00" projParameter="!"/>
+    <edge id="west" from="j0" to="j1" priority="1" numLanes="2" speed="20">
+        <lane id="west_0" index="0" speed="20" length="5000" shape="0.00,245.00 5000.00,245.00"/>
+        <lane id="west_1" index="1" speed="20" length="5000" shape="0.00,255.00 5000.00,255.00"/>
+    </edge>
+    <edge id="east" from="j2" to="j3" priority="1" numLanes="2" speed="20">
+        <lane id="east_0" index="0" speed="20" length="5000" shape="0.00,200.00 5000.00,200.00"/>
+        <lane id="east_1" index="1" speed="20" length="5000" shape="0.00,200.00 5000.00,200.00"/>
+    </edge>
+    
+    <junction id="j0" type="dead_end" x="0" y="250" incLanes="" intLanes=""/>
+    <junction id="j1" type="dead_end" x="5000" y="250" incLanes="west_0 west_1" intLanes=""/>
+    <junction id="j2" type="dead_end" x="5000" y="200" incLanes="" intLanes=""/>
+    <junction id="j3" type="dead_end" x="0" y="200" incLanes="east_0 east_1" intLanes=""/>
+    
+</net>
